@@ -1,8 +1,8 @@
 locals {
-  name = "${var.project_name}-${var.environment}"
+  sg_name = "${var.project_name}-${var.environment}-${var.name}"
 }
 resource "aws_security_group" "example" {
-  name        = var.name
+  name        = local.sg_name
   description = var.sg_description
   vpc_id      = var.vpc_id
 
@@ -28,7 +28,7 @@ resource "aws_security_group" "example" {
     var.common_tags,
     var.sg_tags,
     {
-      Name = local.name
+      Name = local.sg_name
     }
   )
 }
