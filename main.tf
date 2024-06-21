@@ -2,7 +2,7 @@ locals {
   name = "${var.project_name}-${var.environment}"
 }
 resource "aws_security_group" "example" {
-  name        = local.name
+  name        = var.name
   description = var.sg_description
   vpc_id      = var.vpc_id
 

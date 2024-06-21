@@ -14,7 +14,9 @@ variable "common_tags" {
 variable "sg_tags" {
   default = {}
 }
-
+variable "name" {
+  default = ""
+}
 variable "vpc_id" {
   default = ""
 }
