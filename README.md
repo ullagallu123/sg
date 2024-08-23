@@ -34,7 +34,7 @@ This Terraform module creates an AWS Security Group with customizable ingress an
 
 ```hcl
 module "security_group" {
-  source = "./path/to/this/module"
+  source = "git::https://github.com/ullagallu123/sg.git?ref=main"
 
   project_name   = "my-project"
   environment    = "production"
